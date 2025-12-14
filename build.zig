@@ -5,7 +5,7 @@ const CompileStep = std.Build.Step.Compile;
 /// set this to true to link libc
 const should_link_libc = false;
 
-const required_zig_version = std.SemanticVersion.parse("0.13.0") catch unreachable;
+const required_zig_version = std.SemanticVersion.parse("0.15.0") catch unreachable;
 
 fn linkObject(b: *Build, obj: *CompileStep) void {
     if (should_link_libc) obj.linkLibC();
@@ -40,7 +40,7 @@ pub fn build(b: *Build) void {
 
     // Set up an exe for each day
     var day: u32 = 1;
-    while (day <= 25) : (day += 1) {
+    while (day <= 12) : (day += 1) {
         const dayString = b.fmt("day{:0>2}", .{day});
         const zigFile = b.fmt("src/{s}.zig", .{dayString});
 
