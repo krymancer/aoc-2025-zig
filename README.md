@@ -2,6 +2,8 @@
 
 This repo provides a template for Advent of Code participants using Zig.  It contains a main file for each day, a build.zig file set up with targets for each day, and Visual Studio Code files for debugging.
 
+**📝 Note**: This repository now contains Zig translations of the JavaScript solutions from [krymancer/aoc-2025](https://github.com/krymancer/aoc-2025). See [TRANSLATION.md](TRANSLATION.md) for details about what's been translated and how to use the solutions.
+
 This template has been tested with Zig `0.15.0` and may work with other versions.
 
 ## How to use this template:
