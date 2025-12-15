@@ -46,8 +46,9 @@ pub fn main() !void {
         try ranges.append(.{ .start = start, .end = end });
     }
     
-    const L = @divFloor((try std.fmt.allocPrint(allocator, "{}", .{max})).len + 1, 2) * 2;
-    defer allocator.free(try std.fmt.allocPrint(allocator, "{}", .{max}));
+    const max_str = try std.fmt.allocPrint(allocator, "{}", .{max});
+    defer allocator.free(max_str);
+    const L = @divFloor(max_str.len + 1, 2) * 2;
     
     var sum = BigInt.init(allocator);
     defer sum.deinit();

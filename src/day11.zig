@@ -70,9 +70,9 @@ fn countPaths(
 ) !i64 {
     // Create cache key
     const key = try std.fmt.allocPrint(allocator, "{s},{s}", .{ start, end });
-    defer allocator.free(key);
     
     if (cache.get(key)) |cached| {
+        allocator.free(key);
         return cached;
     }
     
@@ -88,9 +88,8 @@ fn countPaths(
         }
     }
     
-    // Store in cache (need to allocate key)
-    const cache_key = try allocator.dupe(u8, key);
-    try cache.put(cache_key, paths);
+    // Store in cache (key is now owned by cache)
+    try cache.put(key, paths);
     
     return paths;
 }
