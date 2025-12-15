@@ -1,3 +1,7 @@
 .zig-cache/
 zig-out/
 build_runner.zig
+
+# Advent of Code input files (personal data, should not be committed)
+src/data/*.txt
+!src/data/keep_directory_in_git.txt
