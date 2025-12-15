@@ -3,4 +3,6 @@
     .version = "0.15.0",
     .dependencies = .{},
     .paths = .{""},
+    
+    .fingerprint = 0x0000000000000000,
 }
