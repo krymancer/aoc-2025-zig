@@ -2,7 +2,7 @@
 
 This repo provides a template for Advent of Code participants using Zig.  It contains a main file for each day, a build.zig file set up with targets for each day, and Visual Studio Code files for debugging.
 
-This template has been tested with Zig `0.13.0` and `0.14.0-dev.2198+e5f5229fd`.  It may not work with other versions.
+This template has been tested with Zig `0.15.0` and may work with other versions.
 
 ## How to use this template:
 
